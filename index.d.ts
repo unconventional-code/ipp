@@ -29,70 +29,85 @@ export const statusCodes: object;
 export class Printer {
   constructor(url: string, options?: PrinterOptions);
 
-  execute(
-    operation: PrinterOpertaion,
-    message?: FullRequest,
-    callback?: (error: Error, response: FullResponse) => void
-  ): void;
-  execute(
+  executePrintJob(
     operation: "Print-Job",
     message: PrintJobRequest,
-    callback?: (error: Error, response: PrintJobResponse) => void
+    callback?: (error: Error, response: PrintJobResponse) => void,
   ): void;
-  execute(
-    operation: "Print-URI",
-    message: PrintURIRequest,
-    callback?: (error: Error, response: PrintJobResponse) => void
+  executePrintURI(
+      operation: "Print-URI",
+      message: PrintURIRequest,
+      callback?: (error: Error, response: PrintJobResponse) => void,
   ): void;
-  execute(
-    operation: "Validate-Job",
-    message: ValidateJobRequest,
-    callback?: (error: Error, response: SimpleResponse) => void
+  executeValidateJob(
+      operation: "Validate-Job",
+      message: ValidateJobRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
-  execute(
-    operation: "Create-Job",
-    message: CreateJobRequest,
-    callback?: (error: Error, response: SimpleResponse) => void
+  executeCreateJob(
+      operation: "Create-Job",
+      message: CreateJobRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
-  execute(
-    operation: "Get-Printer-Attributes",
-    message: GetPrinterAttributesRequest,
-    callback?: (error: Error, response: GetPrinterAttributesResponse) => void
+  executeGetPrinterAttributes(
+      operation: "Get-Printer-Attributes",
+      message: GetPrinterAttributesRequest,
+      callback?: (error: Error, response: GetPrinterAttributesResponse) => void,
   ): void;
-  execute(
-    operation: "Get-Jobs",
-    message: GetJobsRequest,
-    callback?: (error: Error, response: GetJobsResponse) => void
+  executeGetJobs(
+      operation: "Get-Jobs",
+      message: GetJobsRequest,
+      callback?: (error: Error, response: GetJobsResponse) => void,
   ): void;
-  execute(
-    operation: "Pause-Printer" | "Resume-Printer" | "Purge-Jobs",
-    message: SimpleRequest,
-    callback?: (error: Error, response: SimpleResponse) => void
+  executePausePrinter(
+      operation: "Pause-Printer",
+      message: SimpleRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
-  execute(
-    operation: "Send-Document",
-    message: SendDocumentRequest,
-    callback?: (error: Error, response: SendDocumentResponse) => void
+  executeResumePrinter(
+      operation: "Resume-Printer",
+      message: SimpleRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
-  execute(
-    operation: "Send-URI",
-    message: SendURIRequest,
-    callback?: (error: Error, response: SimpleResponse) => void
+  executePurgeJobs(
+      operation: "Purge-Jobs",
+      message: SimpleRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
-  execute(
-    operation: "Cancel-Job" | "Release-Job",
-    message: CancelReleaseJobRequest,
-    callback?: (error: Error, response: SimpleResponse) => void
+  executeSendDocument(
+      operation: "Send-Document",
+      message: SendDocumentRequest,
+      callback?: (error: Error, response: SendDocumentResponse) => void,
   ): void;
-  execute(
-    operation: "Get-Job-Attributes",
-    message: GetJobAttributesRequest,
-    callback?: (error: Error, response: GetJobAttributesResponse) => void
+  executeSendURI(
+      operation: "Send-URI",
+      message: SendURIRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
-  execute(
-    operation: "Hold-Job" | "Restart-Job",
-    message: HoldRestartJobRequest,
-    callback?: (error: Error, response: SimpleResponse) => void
+  executeCancelJob(
+      operation: "Cancel-Job",
+      message: CancelReleaseJobRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
+  ): void;
+  executeReleaseJob(
+      operation:  "Release-Job",
+      message: CancelReleaseJobRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
+  ): void;
+  executeGetJobAttributes(
+      operation: "Get-Job-Attributes",
+      message: GetJobAttributesRequest,
+      callback?: (error: Error, response: GetJobAttributesResponse) => void,
+  ): void;
+  executeHoldJob(
+      operation: "Restart-Job",
+      message: HoldRestartJobRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
+  ): void;
+  executeRestartJob(
+      operation:  "Restart-Job",
+      message: HoldRestartJobRequest,
+      callback?: (error: Error, response: SimpleResponse) => void,
   ): void;
 }
 
