@@ -13,7 +13,10 @@
 		"url": "https://github.com/unconventional-code/ipp.git"
 	},
 	"devDependencies": {
+		"@types/concat-stream": "^2.0.3",
+		"@types/mdns": "^0.0.38",
 		"@types/node": "*",
+		"axios": "^1.6.5",
 		"concat-stream": "^1.6.0",
 		"mdns": "^2.3.3",
 		"pdfkit": "^0.8.3"
