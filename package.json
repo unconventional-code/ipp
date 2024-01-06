@@ -1,5 +1,5 @@
 {
-	"name": "ipp",
+	"name": "@unconventional-code/ipp",
 	"version": "2.0.0",
 	"description": "Internet Printing Protocol (IPP) for nodejs",
 	"keywords": [
@@ -7,14 +7,10 @@
 		"print",
 		"printing"
 	],
-	"homepage": "http://github.com/williamkapke/ipp",
+	"homepage": "http://github.com/unconventional-code/ipp",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/williamkapke/ipp.git"
-	},
-	"author": {
-		"name": "William Kapke",
-		"email": "william.kapke@gmail.com"
+		"url": "https://github.com/unconventional-code/ipp.git"
 	},
 	"devDependencies": {
 		"@types/node": "*",
