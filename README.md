@@ -1,12 +1,16 @@
-# Internet Printing Protocol (IPP) for nodejs
+# FORK OF Internet Printing Protocol (IPP) for nodejs
+
+Original library by [William Kapke](https://github.com/williamkapke)
+Original types by [Filip Stenbacka](https://github.com/filiptypjeu)
+
 ---
 
 A pure Javascript implementation of the IPP/2.0 protocol that has no dependencies.
 
-The IPP protocol was started in the 90's and is still being worked on today. It is a very indepth protocol that spans many 
+The IPP protocol was started in the 90's and is still being worked on today. It is a very indepth protocol that spans many
 RFCs- some of which are dead while others were herded into IPP/v2.x.
 
-There are millions of printers that support IPP. If you have one, this module will allow you to send/recieve data to/from 
+There are millions of printers that support IPP. If you have one, this module will allow you to send/recieve data to/from
 the printer.
 
 To find out if your printer supports IPP:
@@ -15,8 +19,8 @@ To find out if your printer supports IPP:
 * Try: `telnet YOUR_PRINTER 631`. If it connects, that's a good sign.
 * Use the ['/examples/findPrinters.js'](https://github.com/williamkapke/ipp/tree/master/examples/findPrinters.js) script.
 
-I have a pretty good starting point here. I created reference files 
-(`attributes`, `enums`, `keywords`, `operations`, `status-codes`, `versions` and `tags`) and tried to include as many 
+I have a pretty good starting point here. I created reference files
+(`attributes`, `enums`, `keywords`, `operations`, `status-codes`, `versions` and `tags`) and tried to include as many
 links in the comments to the ref docs as I could.
 
 
