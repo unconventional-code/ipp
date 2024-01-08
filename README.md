@@ -16,6 +16,14 @@ Original types by [Filip Stenbacka](https://github.com/filiptypjeu)
 - [react-native-bluetooth-escpos-printer](https://www.npmjs.com/package/@brooons/react-native-bluetooth-escpos-printer)
 - [ipp-encoder](https://www.npmjs.com/package/ipp-encoder)
 
+## IPP Specifications
+
+The best way to build our code and serializer / deserializer will be to use the various CSV files provided by the IPP in the [official IPP Registrations](https://www.iana.org/assignments/ipp-registrations/ipp-registrations.xhtml).
+
+We'll want to reference that as well as the [CUPS specification](https://openprinting.github.io/cups/doc/spec-ipp.html)
+
+The IPP PWG has useful libraries here: https://www.pwg.org/ipp/ippguide.html#standards
+
 ## Original `ipp` Documentation
 
 A pure Javascript implementation of the IPP/2.0 protocol that has no dependencies.

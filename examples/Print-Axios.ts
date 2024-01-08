@@ -15,33 +15,31 @@ const filedata = fs.readFileSync(
   "/Users/blur/Desktop/unconventional-code/ipp/examples/image.jpg"
 );
 
-const buffer = printer.executePrintJob("Print-Job", {
-  "operation-attributes-tag": {
-    "requesting-user-name": "Bumblebee",
-    "job-name": "whatever.pdf",
-    "document-format": "application/octet-stream",
-  },
-  "job-attributes-tag": {
-    // "media-col": {
-    //   "media-source": "tray-2",
-    // },
-  },
-  data: filedata,
-});
-
 async function main() {
-  const res = await axios.post(url, buffer, {
+  const printJobBuffer = printer.executePrintJob("Print-Job", {
+    "operation-attributes-tag": {
+      "requesting-user-name": "Bumblebee",
+      "job-name": "whatever.pdf",
+      "document-format": "application/octet-stream",
+    },
+    "job-attributes-tag": {
+      // "media-col": {
+      //   "media-source": "tray-2",
+      // },
+    },
+    data: filedata,
+  });
+
+  const res = await axios.post(url, printJobBuffer, {
     headers: {
       "Content-Type": "application/ipp",
-      "Content-Type": buffer.length,
+      "Content-Type": printJobBuffer.length,
     },
     responseType: "arraybuffer",
   });
 
   console.log(createdJobResponse.data);
   const resData = printer.decodeMessage(Buffer.from(res.data));
-
-  // console.log(JSON.stringify(ippEncoder.request.decode(Buffer.from(createdJobResponse.data)), null, 2))
   console.log(JSON.stringify(resData, null, 2));
   console.log(createdJobResponse.error);
 
